@@ -1,0 +1,13 @@
+service mysqlchk
+{
+    flags = REUSE
+    socket_type = stream
+    port = 9302
+    wait = no
+    user = nobody
+    server = /opt/mysql/replicationcheck
+    log_on_failure += USERID
+    disable = no
+    only_from = 0.0.0.0/0
+    per_source = UNLIMITED
+}
